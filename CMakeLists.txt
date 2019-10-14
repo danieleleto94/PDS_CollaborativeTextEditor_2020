@@ -19,6 +19,6 @@ list(APPEND LIBRARIES
 
 list(REMOVE_DUPLICATES LIBRARIES)
 
-add_executable(PDS_CollaborativeTextEditor_2020 main.cpp)
+add_executable(PDS_CollaborativeTextEditor_2020 main.cpp lib/server/main.cpp lib/server/main.h lib/server/message.cpp lib/server/message.h lib/server/network_manager.cpp lib/server/network_manager.h lib/server/user.cpp lib/server/user.h lib/server/crdt.cpp lib/server/crdt.h lib/server/file.cpp lib/server/file.h lib/server/character.cpp lib/server/character.h)
 
 target_link_libraries(PDS_CollaborativeTextEditor_2020 ${LIBRARIES})

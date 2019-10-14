@@ -1,0 +1,14 @@
+//
+// Created by daniele on 14/10/19.
+//
+
+#ifndef PDS_COLLABORATIVETEXTEDITOR_2020_USER_H
+#define PDS_COLLABORATIVETEXTEDITOR_2020_USER_H
+
+
+class user {
+
+};
+
+
+#endif //PDS_COLLABORATIVETEXTEDITOR_2020_USER_H
