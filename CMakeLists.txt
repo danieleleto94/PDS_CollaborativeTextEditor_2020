@@ -10,6 +10,8 @@ find_package(Qt5Core REQUIRED)
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Charts REQUIRED)
+find_package(libmongocxx REQUIRED)
+find_package(libbsoncxx REQUIRED)
 
 list(APPEND LIBRARIES
         Qt5::Core
@@ -19,6 +21,16 @@ list(APPEND LIBRARIES
 
 list(REMOVE_DUPLICATES LIBRARIES)
 
-add_executable(PDS_CollaborativeTextEditor_2020 main.cpp lib/server/main.cpp lib/server/main.h lib/server/message.cpp lib/server/message.h lib/server/network_manager.cpp lib/server/network_manager.h lib/server/user.cpp lib/server/user.h lib/server/crdt.cpp lib/server/crdt.h lib/server/file.cpp lib/server/file.h lib/server/character.cpp lib/server/character.h)
+include_directories(${LIBMONGOCXX_INCLUDE_DIR})
+include_directories(${LIBBSONCXX_INCLUDE_DIR})
+include_directories("/usr/local/include/mongocxx/v_noabi")
+include_directories("/usr/local/include/bsoncxx/v_noabi")
+include_directories("/usr/local/include/libmongoc-1.0")
+include_directories("/usr/local/include/libbson-1.0")
+include_directories("/usr/local/lib")
+
+add_executable(PDS_CollaborativeTextEditor_2020 ${SOURCE_FILES} main.cpp lib/server/message.cpp lib/server/message.h lib/server/network_manager.cpp lib/server/network_manager.h lib/server/user.cpp lib/server/user.h lib/server/crdt.cpp lib/server/crdt.h lib/server/file.cpp lib/server/file.h lib/server/character.cpp lib/server/character.h)
 
 target_link_libraries(PDS_CollaborativeTextEditor_2020 ${LIBRARIES})
+target_link_libraries(PDS_CollaborativeTextEditor_2020 ${LIBMONGOCXX_LIBRARIES})
+target_link_libraries(PDS_CollaborativeTextEditor_2020 ${LIBBSONCXX_LIBRARIES})
