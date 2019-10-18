@@ -5,9 +5,15 @@
 #ifndef PDS_COLLABORATIVETEXTEDITOR_2020_FILE_H
 #define PDS_COLLABORATIVETEXTEDITOR_2020_FILE_H
 
+#include <vector>
+#include "character.h"
 
 class file {
+private:
+    std::vector<character> text;
 
+public:
+    
 };
 
 

@@ -4,11 +4,12 @@
 #include <bsoncxx/json.hpp>
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
+#include "lib/server/character.h"
 
 int main(int, char**) {
     qDebug() << QT_VERSION_STR;
     std::cout << "Hello, World!" << std::endl;
-
+/*
     mongocxx::instance inst{};
     mongocxx::client conn{mongocxx::uri("mongodb://localhost:27017")};
 
@@ -23,6 +24,9 @@ int main(int, char**) {
     for (auto&& doc : cursor) {
         std::cout << bsoncxx::to_json(doc) << std::endl;
     }
+*/
+
+
 
     return 0;
 }
